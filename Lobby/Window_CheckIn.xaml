@@ -37,13 +37,14 @@
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Gest Name: " Height="28" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" LineHeight="18" FontSize="18" FontFamily="Verdana"/>
 
             <!-- Elementos de la segunda columna y primera fila -->
-            <TextBox Grid.Row="0" Grid.Column="1" Height="30" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="5" FontFamily="Verdana" FontStyle="Italic" FontSize="14"/>
+            <TextBox x:Name="NameInput" Grid.Row="0" Grid.Column="1" Height="30" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="5" FontFamily="Verdana" FontStyle="Italic" FontSize="14"/>
 
             <!-- Elementos de la segunda fila, primera columna -->
             <TextBlock Grid.Row="1" Grid.Column="0" Text="Number of Gests: " Height="28" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" LineHeight="20" FontSize="18" FontFamily="Verdana"/>
 
             <!-- Elementos de la segunda fila, segunda columna -->
-            <ComboBox Grid.Row="1" Grid.Column="1" Margin="5" Height="28">
+            <ComboBox x:Name="NumGuestsInput" Grid.Row="1" Grid.Column="1" Margin="5" Height="28">
+              
                 <ComboBoxItem Content="1"/>
                 <ComboBoxItem Content="2"/>
                 <ComboBoxItem Content="3"/>
@@ -54,7 +55,7 @@
             <TextBlock Grid.Row="2" Grid.Column="0" Text="Check Out Date: " Height="28" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" LineHeight="20" FontSize="18" FontFamily="Verdana"/>
 
             <!-- Elementos de la tercera fila, segunda columna -->
-            <DatePicker Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="5"/>
+            <DatePicker x:Name="DateCheckOutInput" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="5"/>
 
         </Grid>
 
