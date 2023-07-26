@@ -20,7 +20,9 @@
             <ComboBoxItem Content="4"/>
         </ComboBox>
         <Button x:Name="Out" Content="Button" HorizontalAlignment="Center" Margin="0,278,0,0" VerticalAlignment="Top" Click="Out_Click"/>
-        <Button x:Name="Return" Content="Return" HorizontalAlignment="Left" Margin="103,401,0,0" VerticalAlignment="Top" Click="Return_Click"/>
+        <Button x:Name="Return" Height="40" Width="40" Click="Return_Click" FontFamily="Corbel" BorderBrush="White" Background="White">
+            <Image Source="../Lobby/HomeButton.png" Stretch="Uniform"/>
+        </Button>
 
     </Grid>
 </Window>

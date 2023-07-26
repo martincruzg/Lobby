@@ -13,11 +13,13 @@
                 <GradientStop Color="#FFBFE0F5" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        
-        <Grid   Width="320" Height="400"
+
+        <Label x:Name="Title" Content="Check-In" HorizontalAlignment="Center" Background="{x:Null}" FontFamily="Rage Italic" FontSize="48" Foreground="#FF28A081" Margin="0,60,0,0"/>
+
+        <Grid   Width="380" Height="400"
                 HorizontalAlignment="Center"
-                VerticalAlignment="Bottom">
-            
+                VerticalAlignment="Top" Margin="0,374,0,0">
+
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -32,16 +34,16 @@
             </Grid.ColumnDefinitions>
 
             <!-- Elementos de la primera columna y primera fila -->
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="Gest Name:" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5"/>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Gest Name: " Height="28" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" LineHeight="18" FontSize="18" FontFamily="Verdana"/>
 
             <!-- Elementos de la segunda columna y primera fila -->
-            <TextBox Grid.Row="0" Grid.Column="1" Margin="5"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Height="30" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="5" FontFamily="Verdana" FontStyle="Italic" FontSize="14"/>
 
             <!-- Elementos de la segunda fila, primera columna -->
-            <TextBlock Grid.Row="1" Grid.Column="0" Text="Number of Gests" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Number of Gests: " Height="28" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" LineHeight="20" FontSize="18" FontFamily="Verdana"/>
 
             <!-- Elementos de la segunda fila, segunda columna -->
-            <ComboBox Grid.Row="1" Grid.Column="1" Margin="5" Height="20">
+            <ComboBox Grid.Row="1" Grid.Column="1" Margin="5" Height="28">
                 <ComboBoxItem Content="1"/>
                 <ComboBoxItem Content="2"/>
                 <ComboBoxItem Content="3"/>
@@ -49,15 +51,24 @@
             </ComboBox>
 
             <!-- Elementos de la tercera fila, primera columna -->
-            <TextBlock Grid.Row="2" Grid.Column="0" Text="Expected Check Out" Margin="5"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Check Out Date: " Height="28" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" LineHeight="20" FontSize="18" FontFamily="Verdana"/>
 
             <!-- Elementos de la tercera fila, segunda columna -->
-            <DatePicker Grid.Row="2" Grid.Column="1" Margin="5"/>
-
-            <Button Grid.Row="3" Grid.Column="1" Content="CHECK" Click="Check_Click"/>
-
-            <Button Grid.Row="4" Grid.Column="0" Content="RETURN" Click="Return_Click"/>
+            <DatePicker Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="5"/>
 
         </Grid>
+
+        <Grid
+            HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="220">
+            <Button Height="40" Width="160" HorizontalAlignment="Center" Content="CHECK" Click="Check_Click"/>
+        </Grid>
+
+        <Grid
+            HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" Width="80">
+            <Button Height="40" Width="40" Click="Return_Click" FontFamily="Corbel" BorderBrush="White" Background="White">
+                <Image Source="../Lobby/HomeButton.png"/>
+            </Button>
+        </Grid>
+
     </Grid>
 </Window>
