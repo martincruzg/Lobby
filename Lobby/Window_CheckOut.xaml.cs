@@ -22,6 +22,7 @@ namespace Lobby
         public Window_CheckOut()
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.CanMinimize;
         }
 
         private void Out_Click(object sender, RoutedEventArgs e)
