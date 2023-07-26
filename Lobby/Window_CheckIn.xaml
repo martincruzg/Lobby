@@ -37,7 +37,11 @@
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Gest Name: " Height="28" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" LineHeight="18" FontSize="18" FontFamily="Verdana"/>
 
             <!-- Elementos de la segunda columna y primera fila -->
-            <TextBox x:Name="NameInput" Grid.Row="0" Grid.Column="1" Height="30" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="5" FontFamily="Verdana" FontStyle="Italic" FontSize="14" BorderBrush="#FF44CCA9" Background="White"/>
+            <TextBox x:Name="NameInput" Grid.Row="0" Grid.Column="1" Height="30" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="5" FontFamily="Verdana" FontStyle="Italic" FontSize="14" BorderBrush="#FF44CCA9" Background="White">
+                <TextBox.Padding>
+                    <Thickness Top="5"/>
+                </TextBox.Padding>
+            </TextBox>
 
             <!-- Elementos de la segunda fila, primera columna -->
             <TextBlock Grid.Row="1" Grid.Column="0" Text="Number of Gests: " Height="28" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" LineHeight="20" FontSize="18" FontFamily="Verdana"/>
