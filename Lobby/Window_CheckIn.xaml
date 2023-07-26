@@ -35,13 +35,13 @@
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Gest Name:" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5"/>
 
             <!-- Elementos de la segunda columna y primera fila -->
-            <TextBox Grid.Row="0" Grid.Column="1" Margin="5"/>
+            <TextBox x:Name="NameInput" Grid.Row="0" Grid.Column="1" Margin="5" TextChanged="TextBoxName_TextChanged"/>
 
             <!-- Elementos de la segunda fila, primera columna -->
             <TextBlock Grid.Row="1" Grid.Column="0" Text="Number of Gests" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5"/>
 
             <!-- Elementos de la segunda fila, segunda columna -->
-            <ComboBox Grid.Row="1" Grid.Column="1" Margin="5" Height="20">
+            <ComboBox x:Name="NumGuestsInput" Grid.Row="1" Grid.Column="1" Margin="5" Height="20" SelectionChanged="ComboBox_SelectionChanged">
                 <ComboBoxItem Content="1"/>
                 <ComboBoxItem Content="2"/>
                 <ComboBoxItem Content="3"/>
@@ -52,7 +52,7 @@
             <TextBlock Grid.Row="2" Grid.Column="0" Text="Expected Check Out" Margin="5"/>
 
             <!-- Elementos de la tercera fila, segunda columna -->
-            <DatePicker Grid.Row="2" Grid.Column="1" Margin="5"/>
+            <DatePicker x:Name="DateCheckOutInput" Grid.Row="2" Grid.Column="1" Margin="5"/>
 
             <Button Grid.Row="3" Grid.Column="1" Content="CHECK" Click="Check_Click"/>
 
