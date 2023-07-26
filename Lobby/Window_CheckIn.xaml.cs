@@ -32,63 +32,77 @@ namespace Lobby
             MainWindow mainWindow = new MainWindow();
             this.Close();
             mainWindow.Show();
+            DateTime fechaHoy = DateTime.Today;
+            string fechaHoyString = fechaHoy.ToString("MM/dd/yyyy");
+            MessageBox.Show(fechaHoyString, "Booking error", MessageBoxButton.OK);
         }
 
         private void Check_Click(object sender, RoutedEventArgs e)
         {
-            Guest guest = new Guest();
-
             bool NameFlag = CheckName();
             bool NumGuestsFlag = CheckNumGuests();
             bool DataOutFlag = CheckDataOut();
 
-            if (CheckInSave(NameFlag, NumGuestsFlag, DataOutFlag))
+            if (NameFlag && NumGuestsFlag && DataOutFlag)
             {
+                SaveChackIn();
                 MainWindow mainWindow = new MainWindow();
                 this.Close();
                 mainWindow.Show();
             }
+            else
+            {
+                ErrorCheckInMessage(NameFlag, NumGuestsFlag, DataOutFlag);
+            }
 
         }
 
-        private static bool CheckInSave(bool nameFlag, bool numGuestsFlag, bool dataOutFlag)
+        private void SaveChackIn()
         {
-            if (nameFlag && numGuestsFlag && dataOutFlag)
-            {
-                MessageBox.Show("Your reservation has been successfully completed, we hope you enjoy it.", "Success booking", MessageBoxButton.OK);
-                return true;
-            }
-            MessageBox.Show("Bad input", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
-            return false;
+            Guest guest = new Guest();
+
+            guest.Name = NameInput.Text;
+            guest.NumGuests = int.Parse(NumGuestsInput.Text);
+
+            guest.CheckOut = DataCheckOutInput.Text;
+
+            MessageBox.Show("Your reservation has been successfully saved.", "Booking successful", MessageBoxButton.OK, MessageBoxImage.Information);
+
         }
 
-        private bool CheckDataOut()
+        private void ErrorCheckInMessage(bool nameFlag, bool numGuestsFlag, bool dataOutFlag)
         {
-            if (string.IsNullOrEmpty(NameInput.Text) && Regex.IsMatch(NameInput.Text, @"^[a-zA-Z\s]+$"))
-            {
-                return false;
-            }
-            return true;
-        }
-
-        private bool CheckNumGuests()
-        {
-            if (string.IsNullOrEmpty(NameInput.Text))
-            {
-                return false;
-            }
-            return true;
+            string message = string.Empty;
+            if (!nameFlag) { message += "- The name is invalid (it can only contain letters).\n"; }
+            if (!numGuestsFlag) { message += "- Number of guests must be indicated.\n"; }
+            if (!dataOutFlag) { message += "- The checkout date must be indicated.\n"; }
+            MessageBox.Show(message, "Booking error", MessageBoxButton.OK);
         }
 
         private bool CheckName()
         {
-            if (string.IsNullOrEmpty(NameInput.Text))
-            {/*
-                MessageBox.Show("Gracias por tu retroalimentación", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
-                MessageBox.Show("Gracias por tu retroalimentación2", "Error", MessageBoxButton.OK, MessageBoxImage.Information);*/
+            if (!string.IsNullOrEmpty(NameInput.Text) && Regex.IsMatch(NameInput.Text, "^[a-zA-Z]+$"))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private bool CheckNumGuests()
+        {
+            if (string.IsNullOrEmpty(NumGuestsInput.Text))
+            {
                 return false;
-            }/*
-            NameInput.Text += DateCheckOutInput.Text;*/
+            }
+            return true;
+        }
+
+        private bool CheckDataOut()
+        {
+            if (string.IsNullOrEmpty(DataCheckOutInput.Text))
+            {
+                return false;
+            }
             return true;
         }
 

@@ -7,8 +7,8 @@ namespace Lobby
         public bool RoomStatus;
         public string? Name; //No nullable
         public int NumGuests;
-        public char CheckIn;
-        public char CheckOut;
+        public string? CheckIn;
+        public string? CheckOut;
 
         public int NumGuest { get; internal set; }
     }

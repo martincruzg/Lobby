@@ -55,7 +55,7 @@
             <TextBlock Grid.Row="2" Grid.Column="0" Text="Check Out Date: " Height="28" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" LineHeight="20" FontSize="18" FontFamily="Verdana"/>
 
             <!-- Elementos de la tercera fila, segunda columna -->
-            <DatePicker x:Name="DateCheckOutInput" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="5"/>
+            <DatePicker x:Name="DataCheckOutInput" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="5"/>
 
         </Grid>
 
