@@ -1,0 +1,63 @@
+﻿<Window x:Class="Lobby.Window_CheckIn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lobby"
+        mc:Ignorable="d"
+        Title="Window_CheckIn" Height="800" Width="480">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White"/>
+                <GradientStop Color="#FFBFE0F5" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        
+        <Grid   Width="320" Height="400"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Elementos de la primera columna y primera fila -->
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Gest Name:" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5"/>
+
+            <!-- Elementos de la segunda columna y primera fila -->
+            <TextBox Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+            <!-- Elementos de la segunda fila, primera columna -->
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Number of Gests" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5"/>
+
+            <!-- Elementos de la segunda fila, segunda columna -->
+            <ComboBox Grid.Row="1" Grid.Column="1" Margin="5" Height="20">
+                <ComboBoxItem Content="1"/>
+                <ComboBoxItem Content="2"/>
+                <ComboBoxItem Content="3"/>
+                <ComboBoxItem Content="4"/>
+            </ComboBox>
+
+            <!-- Elementos de la tercera fila, primera columna -->
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Expected Check Out" Margin="5"/>
+
+            <!-- Elementos de la tercera fila, segunda columna -->
+            <DatePicker Grid.Row="2" Grid.Column="1" Margin="5"/>
+
+            <Button Grid.Row="3" Grid.Column="1" Content="CHECK" Click="Check_Click"/>
+
+            <Button Grid.Row="4" Grid.Column="0" Content="RETURN" Click="Return_Click"/>
+
+        </Grid>
+    </Grid>
+</Window>
