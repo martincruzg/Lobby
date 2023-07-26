@@ -27,6 +27,7 @@
             <Grid
             Grid.Column="0"
             Height="100" Width="280">
+                
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -52,12 +53,10 @@
                     <ComboBoxItem Content="3"/>
                     <ComboBoxItem Content="4"/>
                 </ComboBox>
-
-
             </Grid>
 
-            <Button x:Name="Status" Height="40" Width="160" Content="Check Info" Click="Status_Click" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin ="20" FontSize="14" FontFamily="Verdana" Background="White" BorderBrush="#FF44CCA9" Cursor="Hand"/>
-            <TextBlock HorizontalAlignment="Left" Margin="569,200,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+            <Button x:Name="Status" Height="40" Width="160" Content="Check Info" Click="Status_Click" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin ="20" FontSize="16" FontFamily="Verdana" Background="White" BorderBrush="#FF44CCA9" Cursor="Hand"/>
+            <TextBlock Grid.Column="1" Height="60" HorizontalAlignment="Center" Text="TextBlock" VerticalAlignment="Bottom" FontSize="16" FontFamily="Verdana" Background="White" BorderBrush="#FF44CCA9"/>
 
         </Grid>
 
