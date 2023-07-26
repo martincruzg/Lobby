@@ -22,11 +22,19 @@ namespace Lobby
         public Window_Info()
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.CanMinimize;
         }
 
         private void Status_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Return_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            this.Close();
+            mainWindow.Show();
         }
     }
 }
