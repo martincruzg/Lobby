@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="Window_CheckOut" Height="480" Width="800">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFB2FBE8" Offset="0.997"/>
+                <GradientStop Color="White" Offset="0.54"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
         <ComboBox HorizontalAlignment="Left" Margin="247,198,0,0" VerticalAlignment="Top" Width="120">
             <ComboBoxItem Content="1"/>
             <ComboBoxItem Content="2"/>

@@ -9,8 +9,8 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="White"/>
-                <GradientStop Color="#FFBFE0F5" Offset="1"/>
+                <GradientStop Color="#FFB2FBE8" Offset="0.997"/>
+                <GradientStop Color="White" Offset="0.54"/>
             </LinearGradientBrush>
         </Grid.Background>
 
@@ -37,13 +37,14 @@
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Gest Name: " Height="28" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" LineHeight="18" FontSize="18" FontFamily="Verdana"/>
 
             <!-- Elementos de la segunda columna y primera fila -->
-            <TextBox Grid.Row="0" Grid.Column="1" Height="30" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="5" FontFamily="Verdana" FontStyle="Italic" FontSize="14"/>
+            <TextBox x:Name="NameInput" Grid.Row="0" Grid.Column="1" Height="30" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="5" FontFamily="Verdana" FontStyle="Italic" FontSize="14" BorderBrush="#FF44CCA9" Background="White"/>
 
             <!-- Elementos de la segunda fila, primera columna -->
             <TextBlock Grid.Row="1" Grid.Column="0" Text="Number of Gests: " Height="28" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5" LineHeight="20" FontSize="18" FontFamily="Verdana"/>
 
             <!-- Elementos de la segunda fila, segunda columna -->
-            <ComboBox Grid.Row="1" Grid.Column="1" Margin="5" Height="28">
+            <ComboBox x:Name="NumGuestsInput" Grid.Row="1" Grid.Column="1" Margin="5" Height="28" BorderBrush="#FF44CCA9" Background="White" Foreground="Black">
+
                 <ComboBoxItem Content="1"/>
                 <ComboBoxItem Content="2"/>
                 <ComboBoxItem Content="3"/>
@@ -60,7 +61,7 @@
 
         <Grid
             HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="220">
-            <Button Height="40" Width="160" HorizontalAlignment="Center" Content="CHECK" Click="Check_Click"/>
+            <Button Height="40" Width="160" HorizontalAlignment="Center" Content="CHECK" Click="Check_Click" FontSize="14" FontFamily="Verdana" Background="White" BorderBrush="#FF44CCA9" Cursor="Hand"/>
         </Grid>
 
         <Grid
