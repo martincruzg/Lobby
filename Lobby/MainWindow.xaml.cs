@@ -29,21 +29,18 @@ namespace Lobby
         private void Check_In_Click(object sender, RoutedEventArgs e)
         {
             Window_CheckIn window_CheckIn = new Window_CheckIn();
-            this.Close();
             window_CheckIn.Show();
         }
 
         private void Check_Out_Click(object sender, RoutedEventArgs e)
         {
             Window_CheckOut window_CheckOut = new Window_CheckOut();
-            this.Close();
             window_CheckOut.Show();
         }
 
         private void Rooms_Click(object sender, RoutedEventArgs e)
         {
             Window_Info window_Info = new Window_Info();
-            this.Close();
             window_Info.Show();
         }
 

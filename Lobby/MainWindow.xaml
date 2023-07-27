@@ -17,7 +17,6 @@
         <Button x:Name="Check_In" Content="Check-In" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="59,217,0,0" Width="160" Height="32" Click="Check_In_Click" FontSize="16" FontFamily="Verdana" Background="White" BorderBrush="#FF44CCA9" Cursor="Hand"/>
         <Button x:Name="Check_Out" Content="Check-Out" HorizontalAlignment="Left" Margin="240,217,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.074,-0.378" Width="160" Height="32" FontSize="16" FontFamily="Verdana" BorderBrush="#FF44CCA9" Background="White" Cursor="Hand" Click="Check_Out_Click"/>
         <Button x:Name="Rooms" Content="Rooms Info." HorizontalAlignment="Left" Margin="521,217,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.074,-0.378" Width="160" Height="32" FontSize="16" FontFamily="Verdana" BorderBrush="#FF44CCA9" Background="White" Cursor="Hand" Click="Rooms_Click"/>
-        <Button x:Name="Prueba" Content="Button" HorizontalAlignment="Left" Margin="427,345,0,0" VerticalAlignment="Top" Click="Prueba_Click"/>
 
     </Grid>
 </Window>
