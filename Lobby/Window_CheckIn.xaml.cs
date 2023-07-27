@@ -29,12 +29,22 @@ namespace Lobby
 
         private void Return_Click(object sender, RoutedEventArgs e)
         {
+
+            //TESTING THE HOTEL ARRAY IS SAVING THE ////////////////////////////////////////////////////////////////////////////////////////////////////////
+            /*string MESSAGE = string.Empty;
+            for (int i = 0; i < HotelFeatures.Floors; i++)
+            {
+                for (int j = 0; j < HotelFeatures.RoomPerFloor; j++)
+                {
+                    MESSAGE += HotelFeatures.HotelRooms[i, j].Name + HotelFeatures.HotelRooms[i, j].NumGuest + HotelFeatures.HotelRooms[i, j].CheckIn;
+                }
+            }
+            MessageBox.Show(MESSAGE, "Booking error", MessageBoxButton.OK);*/
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
             MainWindow mainWindow = new MainWindow();
             this.Close();
             mainWindow.Show();
-            DateTime fechaHoy = DateTime.Today;
-            string fechaHoyString = fechaHoy.ToString("MM/dd/yyyy");
-            MessageBox.Show(fechaHoyString, "Booking error", MessageBoxButton.OK);
         }
 
         private void Check_Click(object sender, RoutedEventArgs e)
@@ -45,10 +55,11 @@ namespace Lobby
 
             if (NameFlag && NumGuestsFlag && DataOutFlag)
             {
-                SaveChackIn();
-                MainWindow mainWindow = new MainWindow();
+                int ChosenRoom = ChooseRoom();
+                SaveChackIn(ChosenRoom);
+                /*MainWindow mainWindow = new MainWindow();
                 this.Close();
-                mainWindow.Show();
+                mainWindow.Show();*/
             }
             else
             {
@@ -56,16 +67,35 @@ namespace Lobby
             }
 
         }
+        
+        private int ChooseRoom()
+        {
+            for (int i = 0; i < HotelFeatures.Floors; i++)
+            {
+                for (int j = 0; j < HotelFeatures.RoomPerFloor; j++)
+                {
+                    if (!HotelFeatures.HotelRooms[i, j].RoomStatus)
+                    {
+                        return i * 10 + j;
+                    }
+                }
+            }
+            return 0;
+        }
 
-        private void SaveChackIn()
+        private void SaveChackIn(int chosenRoom)
         {
             Guest guest = new Guest();
 
             guest.Name = NameInput.Text;
             guest.NumGuests = int.Parse(NumGuestsInput.Text);
-
             guest.CheckOut = DataCheckOutInput.Text;
+            DateTime todayDate = DateTime.Today;
+            var todayDateString = todayDate.ToString("MM/dd/yyyy");
+            guest.CheckIn = todayDateString;
+            guest.RoomStatus = true;
 
+            HotelFeatures.HotelRooms[chosenRoom / 10, chosenRoom % 10] = guest;
             MessageBox.Show("Your reservation has been successfully saved.", "Booking successful", MessageBoxButton.OK, MessageBoxImage.Information);
 
         }
@@ -81,7 +111,7 @@ namespace Lobby
 
         private bool CheckName()
         {
-            if (!string.IsNullOrEmpty(NameInput.Text) && Regex.IsMatch(NameInput.Text, "^[a-zA-Z]+$"))
+            if (!string.IsNullOrEmpty(NameInput.Text) && Regex.IsMatch(NameInput.Text, "^[a-zA-Z ]+$"))
             {
                 return true;
             }
