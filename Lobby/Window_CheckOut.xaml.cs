@@ -32,9 +32,7 @@ namespace Lobby
 
         private void Return_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
             this.Close();
-            mainWindow.Show();
         }
     }
 }

@@ -29,9 +29,7 @@ namespace Lobby
 
         private void Return_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
             this.Close();
-            mainWindow.Show();
         }
 
         private void Check_Click(object sender, RoutedEventArgs e)
@@ -39,8 +37,9 @@ namespace Lobby
             bool NameFlag = CheckName();
             bool NumGuestsFlag = CheckNumGuests();
             bool DataOutFlag = CheckDataOut();
+            bool DatePosFlag = CheckDatePos();
 
-            if (NameFlag && NumGuestsFlag && DataOutFlag)
+            if (NameFlag && NumGuestsFlag && DataOutFlag && DatePosFlag)
             {
                 int ChosenRoom = ChooseRoom();
                 SaveChackIn(ChosenRoom);
@@ -50,7 +49,7 @@ namespace Lobby
             }
             else
             {
-                ErrorCheckInMessage(NameFlag, NumGuestsFlag, DataOutFlag);
+                ErrorCheckInMessage(NameFlag, NumGuestsFlag, DataOutFlag, DatePosFlag);
             }
 
         }
@@ -91,12 +90,13 @@ namespace Lobby
 
         }
 
-        private void ErrorCheckInMessage(bool nameFlag, bool numGuestsFlag, bool dataOutFlag)
+        private void ErrorCheckInMessage(bool nameFlag, bool numGuestsFlag, bool dataOutFlag, bool datePosFlag)
         {
             string message = string.Empty;
             if (!nameFlag) { message += "- The name is invalid (it can only contain letters).\n"; }
             if (!numGuestsFlag) { message += "- Number of guests must be indicated.\n"; }
             if (!dataOutFlag) { message += "- The checkout date must be indicated.\n"; }
+            if (!datePosFlag & dataOutFlag) { message += "- The checkout must be in a later date.\n"; }
             MessageBox.Show(message, "Booking error", MessageBoxButton.OK);
         }
 
@@ -121,6 +121,17 @@ namespace Lobby
         private bool CheckDataOut()
         {
             if (string.IsNullOrEmpty(DataCheckOutInput.Text))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private bool CheckDatePos()
+        {
+            DateTime selecteddate = DataCheckOutInput.SelectedDate ?? DateTime.Now;
+            int resultComp = DateTime.Compare(selecteddate, DateTime.Now);
+            if (resultComp == 0 | resultComp < 0)
             {
                 return false;
             }
