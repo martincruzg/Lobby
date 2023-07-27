@@ -23,7 +23,6 @@ namespace Lobby
         public MainWindow()
         {
             InitializeComponent();
-
             this.ResizeMode = ResizeMode.CanMinimize;
         }
 
