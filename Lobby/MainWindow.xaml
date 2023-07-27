@@ -8,16 +8,31 @@
         Title="Lobby" Height="480" Width="800">
     <Grid>
         <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFB2FBE8" Offset="0.997"/>
-                <GradientStop Color="White" Offset="0.54"/>
-            </LinearGradientBrush>
+            <ImageBrush ImageSource="/691289_050115-wpvi-shutterstock-generic-beach-img.jpg" Opacity="0.9">
+                <ImageBrush.RelativeTransform>
+                    <TransformGroup>
+                        <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="3.2" ScaleY="3.2"/>
+                        <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                        <RotateTransform CenterX="0.5" CenterY="0.5"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ImageBrush.RelativeTransform>
+            </ImageBrush>
         </Grid.Background>
-        <Label x:Name="Title" Content="Lobby" HorizontalAlignment="Center" VerticalAlignment="Top" Background="{x:Null}" FontFamily="Rage Italic" FontSize="48" Foreground="#FF28A081"/>
-        <Button x:Name="Check_In" Content="Check-In" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="59,217,0,0" Width="160" Height="32" Click="Check_In_Click" FontSize="16" FontFamily="Verdana" Background="White" BorderBrush="#FF44CCA9" Cursor="Hand"/>
-        <Button x:Name="Check_Out" Content="Check-Out" HorizontalAlignment="Left" Margin="240,217,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.074,-0.378" Width="160" Height="32" FontSize="16" FontFamily="Verdana" BorderBrush="#FF44CCA9" Background="White" Cursor="Hand" Click="Check_Out_Click"/>
-        <Button x:Name="Rooms" Content="Rooms Info." HorizontalAlignment="Left" Margin="521,217,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.074,-0.378" Width="160" Height="32" FontSize="16" FontFamily="Verdana" BorderBrush="#FF44CCA9" Background="White" Cursor="Hand" Click="Rooms_Click"/>
 
+        <Grid Opacity="0.8">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB2FBE8" Offset="0.997"/>
+                    <GradientStop Color="White" Offset="0.54"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Label x:Name="Title" Content="Lobby" HorizontalAlignment="Center" VerticalAlignment="Top" Background="{x:Null}" FontFamily="Rage Italic" FontSize="48" Foreground="#FF28A081" Margin="0,40,0,0"/>
+            <Button x:Name="Check_In" Content="Check-In" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="59,217,0,0" Width="160" Height="32" Click="Check_In_Click" FontSize="16" FontFamily="Verdana" Background="White" BorderBrush="#FF44CCA9" Cursor="Hand"/>
+            <Button x:Name="Check_Out" Content="Check-Out" HorizontalAlignment="Left" Margin="240,217,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.074,-0.378" Width="160" Height="32" FontSize="16" FontFamily="Verdana" BorderBrush="#FF44CCA9" Background="White" Cursor="Hand" Click="Check_Out_Click"/>
+            <Button x:Name="Rooms" Content="Rooms Info." HorizontalAlignment="Left" Margin="521,217,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.074,-0.378" Width="160" Height="32" FontSize="16" FontFamily="Verdana" BorderBrush="#FF44CCA9" Background="White" Cursor="Hand" Click="Rooms_Click"/>
+
+        </Grid>
     </Grid>
 </Window>
 

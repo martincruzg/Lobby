@@ -8,10 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="691289_050115-wpvi-shutterstock-generic-beach-img.jpg" />
+    <None Remove="beach-6292382_640.jpg" />
     <None Remove="HomeButton.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="691289_050115-wpvi-shutterstock-generic-beach-img.jpg" />
+    <Resource Include="beach-6292382_640.jpg" />
     <Resource Include="HomeButton.png" />
   </ItemGroup>
 
