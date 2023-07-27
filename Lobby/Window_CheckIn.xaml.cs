@@ -29,19 +29,6 @@ namespace Lobby
 
         private void Return_Click(object sender, RoutedEventArgs e)
         {
-
-            //TESTING THE HOTEL ARRAY IS SAVING THE ////////////////////////////////////////////////////////////////////////////////////////////////////////
-            /*string MESSAGE = string.Empty;
-            for (int i = 0; i < HotelFeatures.Floors; i++)
-            {
-                for (int j = 0; j < HotelFeatures.RoomPerFloor; j++)
-                {
-                    MESSAGE += HotelFeatures.HotelRooms[i, j].Name + HotelFeatures.HotelRooms[i, j].NumGuest + HotelFeatures.HotelRooms[i, j].CheckIn;
-                }
-            }
-            MessageBox.Show(MESSAGE, "Booking error", MessageBoxButton.OK);*/
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
             MainWindow mainWindow = new MainWindow();
             this.Close();
             mainWindow.Show();
@@ -89,6 +76,10 @@ namespace Lobby
 
             guest.Name = NameInput.Text;
             guest.NumGuests = int.Parse(NumGuestsInput.Text);
+            /*
+            if (DataCheckOutInput.Text == "/") { guest.CheckOut = DataCheckOutInput.Text.Insert(1, "0"); }
+            else { guest.CheckOut = DataCheckOutInput.Text; } 
+            */
             guest.CheckOut = DataCheckOutInput.Text;
             DateTime todayDate = DateTime.Today;
             var todayDateString = todayDate.ToString("MM/dd/yyyy");

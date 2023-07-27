@@ -27,7 +27,7 @@
             <Grid
             Grid.Column="0"
             Height="100" Width="280">
-                
+
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -41,13 +41,13 @@
                 <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Height="25" Text="Floor: " VerticalAlignment="Bottom" FontSize="18" FontFamily="Verdana"/>
                 <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" Height="25" Text="Room: " VerticalAlignment="Bottom" FontSize="18" FontFamily="Verdana"/>
 
-                <ComboBox x:Name="ComboBox1" Grid.Row="1" Grid.Column="0" Height="28" VerticalAlignment="Center" Margin="6">
+                <ComboBox x:Name="FloorInput" Grid.Row="1" Grid.Column="0" Height="28" VerticalAlignment="Center" Margin="6">
                     <ComboBoxItem Content="1"/>
                     <ComboBoxItem Content="2"/>
                     <ComboBoxItem Content="3"/>
                     <ComboBoxItem Content="4"/>
                 </ComboBox>
-                <ComboBox  x:Name="ComboBox2" Grid.Row="1" Grid.Column="1" Height="28" VerticalAlignment="Center" Margin="6">
+                <ComboBox  x:Name="RoomInput" Grid.Row="1" Grid.Column="1" Height="28" VerticalAlignment="Center" Margin="6">
                     <ComboBoxItem Content="1"/>
                     <ComboBoxItem Content="2"/>
                     <ComboBoxItem Content="3"/>
@@ -58,7 +58,7 @@
             <Button x:Name="Status" Height="40" Width="160" Content="Check Info" Click="Status_Click"
                     HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin ="20"
                     FontSize="16" FontFamily="Verdana" Background="White" BorderBrush="#FF44CCA9" Cursor="Hand"/>
-            <TextBlock Grid.Column="1" Height="160" Width="280" HorizontalAlignment="Center" Text="TextBlock" VerticalAlignment="Bottom" Margin="20" Padding="0,20,0,0"
+            <TextBlock x:Name="InfoTextBox" Grid.Column="1" Height="160" Width="280" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,140,0,0" Padding="0,20,0,0"
                        FontSize="18" FontFamily="Verdana" TextAlignment="Center"/>
 
         </Grid>
@@ -68,7 +68,7 @@
             <Button Height="40" Width="40" Click="Return_Click" FontFamily="Corbel" BorderBrush="#FF44CCA9" Background="White" Cursor="Hand">
                 <Image Source="../Lobby/HomeButton.png"/>
             </Button>
-        </Grid>        
-        
+        </Grid>
+
     </Grid>
 </Window>
