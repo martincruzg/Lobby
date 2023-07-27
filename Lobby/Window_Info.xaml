@@ -45,13 +45,13 @@
                     <ComboBoxItem Content="1"/>
                     <ComboBoxItem Content="2"/>
                     <ComboBoxItem Content="3"/>
-                    <ComboBoxItem Content="4"/>
                 </ComboBox>
                 <ComboBox  x:Name="RoomInput" Grid.Row="1" Grid.Column="1" Height="28" VerticalAlignment="Center" Margin="6">
                     <ComboBoxItem Content="1"/>
                     <ComboBoxItem Content="2"/>
                     <ComboBoxItem Content="3"/>
                     <ComboBoxItem Content="4"/>
+                    <ComboBoxItem Content="5"/>
                 </ComboBox>
             </Grid>
 
@@ -65,8 +65,13 @@
 
         <Grid
             HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" Width="80">
-            <Button Height="40" Width="40" Click="Return_Click" FontFamily="Corbel" BorderBrush="#FF44CCA9" Background="White" Cursor="Hand">
-                <Image Source="../Lobby/HomeButton.png"/>
+            <Button Height="40" Width="40" Click="Return_Click" FontFamily="Corbel" Cursor="Hand">
+                <Button.Foreground>
+                    <ImageBrush/>
+                </Button.Foreground>
+                <Button.Background>
+                    <ImageBrush ImageSource="/HomeButton.png"/>
+                </Button.Background>
             </Button>
         </Grid>
 

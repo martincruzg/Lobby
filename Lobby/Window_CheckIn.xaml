@@ -70,8 +70,14 @@
 
         <Grid
             HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" Width="80">
-            <Button Height="40" Width="40" Click="Return_Click" FontFamily="Corbel" BorderBrush="#FF44CCA9" Background="White" Cursor="Hand">
-                <Image Source="../Lobby/HomeButton.png"/>
+            <Button Height="40" Width="40" Click="Return_Click" FontFamily="Corbel" Cursor="Hand" BorderBrush="White">
+                <Button.Foreground>
+                    <ImageBrush/>
+                </Button.Foreground>
+                <Button.Background>
+                    <ImageBrush ImageSource="/HomeButton.png"/>
+                </Button.Background>
+
             </Button>
         </Grid>
 
