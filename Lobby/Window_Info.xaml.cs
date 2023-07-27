@@ -27,7 +27,21 @@ namespace Lobby
 
         private void Status_Click(object sender, RoutedEventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(FloorInput.Text) && !string.IsNullOrEmpty(RoomInput.Text))
+            {
+                if (HotelFeatures.HotelRooms[int.Parse(FloorInput.Text) - 1, int.Parse(RoomInput.Text) - 1].RoomStatus)
+                {
+                    InfoTextBox.Text = GetInfo();
+                }
+                else
+                {
+                    InfoTextBox.Text = "Free room";
+                }
+            }
+            else
+            {
+                InfoTextBox.Text = "Choose a room";
+            }
         }
 
         private void Return_Click(object sender, RoutedEventArgs e)
@@ -35,6 +49,19 @@ namespace Lobby
             MainWindow mainWindow = new MainWindow();
             this.Close();
             mainWindow.Show();
+        }
+        private string GetInfo()
+        {
+            var infoMessage = new string(string.Empty);
+            infoMessage += "Guest: " + HotelFeatures.HotelRooms[int.Parse(FloorInput.Text) - 1, int.Parse(RoomInput.Text) - 1].Name + "\n";
+
+            infoMessage += "Number of guests: " + HotelFeatures.HotelRooms[int.Parse(FloorInput.Text) - 1, int.Parse(RoomInput.Text) - 1].NumGuest + "\n";
+
+            infoMessage += "Check-In date: " + HotelFeatures.HotelRooms[int.Parse(FloorInput.Text) - 1, int.Parse(RoomInput.Text) - 1].CheckIn + "\n";
+
+            infoMessage += "Check-Out date: " + HotelFeatures.HotelRooms[int.Parse(FloorInput.Text) - 1, int.Parse(RoomInput.Text) - 1].CheckOut + "\n";
+
+            return infoMessage;
         }
     }
 }
